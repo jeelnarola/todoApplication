@@ -1,0 +1,31 @@
+<p>empoyee-form works!</p>
+<div class="alert alert-danger" role="alert" *ngIf="erroralert" style="cursor: pointer;" (click)="erroralert=false">
+    A simple danger alert—check it out!
+  </div>
+<div class="col-5 m-5">
+    <form [formGroup]="empoyeeFormGrop" (ngSubmit)="empoyeForm()">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Empoyee Name</label>
+          <input type="tex" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="ename">
+            <div *ngIf="namevalidation?.invalid && submitbtn || namevalidation?.touched" style="color: red;">
+                <span *ngIf="namevalidation?.errors?.['required']">Name Is Required....</span>
+                <span *ngIf="namevalidation?.errors?.['minlength']">Name minLength 3 char....</span>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Empoyee Work</label>
+            <input type="tex" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="ework">
+              <div *ngIf="workvalidation?.invalid && submitbtn || workvalidation?.touched" style="color: red;">
+                  <span *ngIf="workvalidation?.errors?.['required']">Work Is Required....</span>
+              </div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Empoyee Age</label>
+            <input type="tex" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="eage">
+              <div *ngIf="agevalidation?.invalid && submitbtn ||  agevalidation?.touched" style="color: red;">
+                  <span *ngIf="agevalidation?.errors?.['required']">Work Is age....</span>
+              </div>
+          </div>
+        <button type="submit" class="btn btn-primary" [value]="Empoyebuttonvalue">{{Empoyebuttonvalue}}</button>
+      </form>
+</div>

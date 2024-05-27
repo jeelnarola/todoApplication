@@ -1,0 +1,26 @@
+<input type="text" [(ngModel)]="search">
+<div class="col-5 m-5">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">no</th>
+        <th scope="col">E_Name</th>
+        <th scope="col">E_Work</th>
+        <th scope="col">E_Age</th>
+        <th scope="col">action</th>
+      </tr>
+    </thead>
+    <tbody>
+     <tr *ngFor="let item of Empoyes | filter:search  let i=index;">
+      <td>{{i+1}}</td>
+      <td>{{item.ename}}</td>
+      <td>{{item.ework}}</td>
+      <td>{{item.eage}}</td>
+      <td>
+        <button (click)="empoyeEdit(item.id)">Edit</button>
+        <button (click)="empoyeDelete(item.id)">delete</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
