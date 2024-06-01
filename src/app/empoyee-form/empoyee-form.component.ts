@@ -21,7 +21,7 @@ export class EmpoyeeFormComponent implements OnInit {
   ngOnInit(): void {
     this.formcoltionEmpoyee()
     this.editEmpoye()
-    console.log();
+    console.log(this.parmasId.snapshot.params?.['id']);
     
   }
 
@@ -80,7 +80,6 @@ export class EmpoyeeFormComponent implements OnInit {
         ework:new FormControl(`${data.ework}`,[Validators.required]),
         eage:new FormControl(`${data.eage}`,[Validators.required]),
       })
-      
     })
   }
 }

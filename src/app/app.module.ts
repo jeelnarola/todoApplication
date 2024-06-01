@@ -11,6 +11,8 @@ import { ListemployeeComponent } from './listemployee/listemployee.component';
 import { FilterPipe } from './filter.pipe';
 // import { FilterPipe } from './empoyee/filter.pipe';
 import { FormsModule } from '@angular/forms';
+import { NgxPaginationModule } from 'ngx-pagination';
+
 
 
 @NgModule({
@@ -28,6 +30,7 @@ import { FormsModule } from '@angular/forms';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -8,8 +8,8 @@ export class FilterPipe implements PipeTransform {
       return [];
     }
     return value.filter(function(ele:any){
-      return ele.ename.indexOf(serachvalue) > -1
+      return ele.ework.indexOf(serachvalue) > -1
     });
   }
-
+  
 }

@@ -13,7 +13,6 @@ export class EmpoyeeService {
   postEmpoye(data:any) {
     return this._http.post(`${this.URL}/User`,data)
   }
-
   getEmpoyee(){
     return this._http.get(`${this.URL}/User`)
   }

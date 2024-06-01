@@ -1,4 +1,4 @@
-<input type="text" [(ngModel)]="search">
+<input type="text" [(ngModel)]="search" placeholder="Employe Work search">
 <div class="col-5 m-5">
   <table class="table">
     <thead>
@@ -11,8 +11,8 @@
       </tr>
     </thead>
     <tbody>
-     <tr *ngFor="let item of Empoyes | filter:search  let i=index;">
-      <td>{{i+1}}</td>
+     <tr *ngFor="let item of Empoyes | filter:search| paginate:{itemsPerPage:5,currentPage:currentPage,totalItems:count}  let i=index;">
+      <td>{{i+1+(tableSize*(currentPage-1))}}</td>
       <td>{{item.ename}}</td>
       <td>{{item.ework}}</td>
       <td>{{item.eage}}</td>
@@ -23,4 +23,7 @@
     </tr>
     </tbody>
   </table>
+  <div>
+    <pagination-controls previousLabel="'prev" nextLabel="next" (pageChange)="onTableDataChange($event)"></pagination-controls>
+  </div>
 </div>
